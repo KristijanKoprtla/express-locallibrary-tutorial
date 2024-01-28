@@ -46,7 +46,10 @@ AuthorSchema.virtual("date_of_death_formatted").get(function () {
 AuthorSchema.virtual("lifespan").get(function () {
   let lifespan = "";
 
-  if (this.date_of_birth_formatted) {
+  if (
+    this.date_of_birth_formatted &&
+    DateTime.fromJSDate(this.date_of_birth).isValid
+  ) {
     lifespan += this.date_of_birth_formatted;
 
     if (this.date_of_death && DateTime.fromJSDate(this.date_of_death).isValid) {

@@ -3,3 +3,11 @@
   padding: 0;
   list-style: none;
 }
+
+.book-list,
+.author-list,
+.genre-list,
+.bookInstances-list,
+.author-detail {
+  font-size: 1.6rem;
+}
